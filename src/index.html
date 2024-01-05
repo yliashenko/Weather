@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Weather</title>
+</head>
+
+<link href="styles/css.css" rel="stylesheet">
+
+<body>
+
+<div id="content">
+    <div class="sub-container" id="current-container">
+
+        <div id="date-time-updated"></div>
+
+        <form>
+            <div id="change-units-radio">
+
+                <ul>
+                    <li>
+                        <input id="celsiusRadio" name="unit" type="radio" value="Celsius">
+                        <label for="celsiusRadio">Celsius</label>
+
+                        <div class="check"></div>
+                    </li>
+
+                    <li>
+                        <input id="fahrenheitRadio" name="unit" type="radio" value="Fahrenheit">
+                        <label for="fahrenheitRadio">Fahrenheit</label>
+
+                        <div class="check">
+                            <div class="inside"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </form>
+
+        <div id="city-box">
+            <div id="city"></div>
+        </div>
+
+        <div id="current-weather-info">
+            <div class="weather-main-column">
+                <div id="temp-box">
+                    <div id="temperature"></div>
+                </div>
+            </div>
+
+
+            <div class="weather-main-column">
+                <div id="cond-icon"></div>
+                <div id="weather-description"></div>
+            </div>
+        </div>
+
+        <div id="extra-weather-info">
+            <div class="extra-weather-column">
+                <div id="temp-min"></div>
+                <div id="temp-max"></div>
+            </div>
+
+            <div class="extra-weather-column">
+                <div id="temp-feels-like"></div>
+                <div id="wind-box"></div>
+            </div>
+
+            <div class="extra-weather-column">
+                <div id="humidity"></div>
+                <div id="pressure"></div>
+            </div>
+
+            <div class="extra-weather-column">
+                <div id="sunrise"></div>
+                <div id="sunset"></div>
+            </div>
+
+        </div>
+            <div id="country"></div>
+            <div id="date-time-local"></div>
+
+    </div>
+
+    <div class="sub-container" id="forecast-container">
+
+        <div id="search-container">
+
+            <div id="city-search-box">
+                <input id="search-field" placeholder="Enter city name" type="text">
+                <button id="search-btn" type="button">
+                    <img src="/src/assets/icons/white/search1.png" alt="search-icon">
+                </button>
+            </div>
+            <p class="error" id="errorIfNoResponse">Nothing found :(</p>
+            <p class="error" id="errorIfEmptySearch">Please, enter the city name</p>
+
+            <div id="recent"></div>
+        </div>
+
+        <div id="forecast">
+            <p>____________________________________________</p>
+            <h2>5 days forecast</h2>
+            <table id="forecastTable"></table>
+        </div>
+    </div>
+
+</div>
+
+<script src="mvc/controller.js" type="module"></script>
+<script src="mvc/model.js" type="module"></script>
+<script src="helpers/helpers.js" type="module"></script>
+<script src="helpers/url-builder.js" type="module"></script>
+
+</body>
+</html>
